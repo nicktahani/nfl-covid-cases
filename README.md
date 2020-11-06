@@ -1,1 +1,1 @@
-Tracking postive COVID cases in the NFL.  
+Tracking NFL players placed on the COVID reserve list.  
