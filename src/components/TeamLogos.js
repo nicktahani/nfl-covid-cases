@@ -1,9 +1,10 @@
 import React from 'react'
 import { NFL_TEAM_LOGOS } from '../constants/teams'
+import '../css/TeamLogos.css'
 
-function TeamLogos ({ onSelect, ...imgProps }) {
+const TeamLogos = ({ onSelect, ...imgProps }) => {
   return (
-    <>
+    <div className='logos'>
       {NFL_TEAM_LOGOS.map(team => 
         <img 
           {...imgProps}  
@@ -13,7 +14,7 @@ function TeamLogos ({ onSelect, ...imgProps }) {
           alt={team}
         />
       )}
-    </>
+    </div>
   )
 
 }

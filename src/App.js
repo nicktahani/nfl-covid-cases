@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">  
       <InfoBox/>
-      <TeamLogos width='300px' height='300px'/>
+      <TeamLogos width='250px' height='250px'/>
     </div>
   );
 }
