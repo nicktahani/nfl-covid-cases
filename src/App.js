@@ -6,8 +6,9 @@ import TeamLogos from './components/TeamLogos'
 function App() {
   return (
     <div className="App">  
+      <span className='header'>NFL COVID CASES</span>
       <InfoBox/>
-      <TeamLogos width='250px' height='250px'/>
+      <TeamLogos width='200px' height='200px'/>
     </div>
   );
 }
