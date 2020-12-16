@@ -4,6 +4,7 @@ import '../css/TeamLogos.css'
 // import useFetchData from './useFetchData'
 // import { csvParse } from 'd3'
 import { csv } from 'd3'
+import PlayerList from './PlayerList'
 
 const url = './data/nflcovid.csv' //in public/
 
@@ -12,10 +13,11 @@ const url = './data/nflcovid.csv' //in public/
 //   return csvParse(data)
 // }
 
+
 const deserializer = d => {
   return {
     ...d,
-    name: `${d.first} ${d.last}`
+    list: `${d.first} ${d.last} (${d.position})`, //filter players by week
   }
 }
 
@@ -25,6 +27,7 @@ const TeamLogos = ({...imgProps }) => {
   const [error, setError] = useState(false)
   const [data, setData] = useState(null)
   const [isFetching, setIsFetching] = useState(true)
+  const [selectedTeam, setSelectedTeam] = useState(null)
 
   useEffect(() => {
     csv(url, deserializer)
@@ -39,7 +42,7 @@ const TeamLogos = ({...imgProps }) => {
   }, [])
 
   const onSelect = team => {
-    console.log(data.filter(d => d.abbreviation === team))
+    setSelectedTeam(team)
   }
 
   console.log(data)
@@ -59,7 +62,9 @@ const TeamLogos = ({...imgProps }) => {
             key={team}
             alt={team}
           />
-        )}
+        )
+      }
+      {selectedTeam && <PlayerList team={selectedTeam} data={data} />}
     </div>
   )
 
