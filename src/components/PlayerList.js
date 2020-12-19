@@ -12,3 +12,4 @@ const PlayerList = ({ team, data }) => {
 }
 
 export default PlayerList
+
