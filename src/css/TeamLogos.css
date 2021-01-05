@@ -1,15 +1,16 @@
-.logos {
+.logo-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
+
 }
 
 
-.logos img:hover { 
+.logo-grid img:hover { 
   transform: scale(1.2); 
 }
 
-.logos img {
+.logo-grid img {
   cursor: pointer;
-  padding-bottom: 1em;
+  margin: 1.5em;
 }

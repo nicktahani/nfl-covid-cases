@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import PlayerList from './PlayerList'
-import TeamLogos from './TeamLogos'
 import '../css/TeamLogos.css'
 import { csv } from 'd3'
+import TeamCard from './TeamCard'
+import { NFL_TEAM_LOGOS } from '../constants/teams'
 // import useFetchData from './useFetchData'
 
 const url = './data/nflcovid.csv' //in public/
@@ -10,7 +10,7 @@ const url = './data/nflcovid.csv' //in public/
 const deserializer = d => {
   return {
     ...d,
-    list: `${d.first} ${d.last} (${d.position})`, //filter players by week
+    list: `${d.first} ${d.last} (${d.position})`, //TODO: filter case list by week
   }
 }
 
@@ -18,7 +18,6 @@ const FetchCovidData = () => {
   const [error, setError] = useState(false)
   const [data, setData] = useState(null)
   const [isFetching, setIsFetching] = useState(true)
-  const [selectedTeam, setSelectedTeam] = useState(null)
 
   useEffect(() => {
     csv(url, deserializer)
@@ -32,20 +31,13 @@ const FetchCovidData = () => {
       })
   }, [])
 
-  const handleSelectTeam = team => {
-    setSelectedTeam(team)
-  }
-
-  console.log(data)
-
   if (isFetching) {
     return <div>Loading...</div>
   }
 
   return (
-    <div>
-      <TeamLogos width='200px' height='200px' onSelectTeam={handleSelectTeam} />
-      {selectedTeam && <PlayerList team={selectedTeam} data={data} />}
+    <div className='logo-grid'>
+       {NFL_TEAM_LOGOS.map(team => <TeamCard team={team} key={team} data={data} />)}
     </div>
   )
 }

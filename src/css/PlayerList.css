@@ -1,0 +1,9 @@
+/* .cases-list {
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+} */
+
+.cases-list {
+  text-align: center;
+}

@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import InfoBox from './components/InfoBox';
-// import TeamLogos from './components/TeamLogos'
 import FetchCovidData from './components/FetchCovidData';
 
 
