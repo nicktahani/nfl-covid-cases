@@ -1,14 +1,13 @@
 import React from 'react'
-import '../css/TeamLogos.css'
+import '../css/TeamLogo.css'
 
-const TeamLogos = ({ team, handleSelectTeam, ...imgProps }) => {
+const TeamLogo = ({ team, ...imgProps }) => {
   
   return (
     <>
       <img 
         {...imgProps}  
         src={`${process.env.PUBLIC_URL}/logos/${team}.svg`} 
-        onClick={() => handleSelectTeam(team)} 
         alt={team}
       />
     </>
@@ -16,4 +15,4 @@ const TeamLogos = ({ team, handleSelectTeam, ...imgProps }) => {
 
 }
 
-export default TeamLogos
+export default TeamLogo

@@ -1,32 +1,26 @@
-//look at slack
 import React, { useState } from 'react'
-// import Logo from './Logo'
 import PlayerList from './PlayerList'
-import TeamLogos from './TeamLogos'
+import TeamLogo from './TeamLogo'
 import '../css/TeamCard.css'
 
 const TeamCard = ({ team, data }) => {
   const [isOpen, setIsOpen] = useState(false)
-  const [selectedTeam, setSelectedTeam] = useState(null)
-
-  const handleSelectTeam = team => {
-    setSelectedTeam(team)
-    toggleOpen()
-  }
   
   const toggleOpen = () => {
     setIsOpen(!isOpen)
+    console.log(team)
   }
 
   return (
     <div className='card'>
-      <TeamLogos 
-        team={team} 
-        handleSelectTeam={handleSelectTeam} 
-        width='200px' 
-        height='200px'
-      />
-      {(isOpen && selectedTeam) && <PlayerList team={selectedTeam} data={data} />}
+      <div onClick={toggleOpen}>
+        <TeamLogo 
+          team={team} 
+          width='200px' 
+          height='200px'
+        />
+      </div>
+      {isOpen && <PlayerList team={team} data={data} />}
     </div>
   )
 }

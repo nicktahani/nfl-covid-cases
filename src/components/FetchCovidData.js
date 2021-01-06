@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import '../css/TeamLogos.css'
+import '../css/TeamLogo.css'
 import { csv } from 'd3'
 import TeamCard from './TeamCard'
 import { NFL_TEAM_LOGOS } from '../constants/teams'
