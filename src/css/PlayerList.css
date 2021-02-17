@@ -1,9 +1,11 @@
-/* .cases-list {
-  display: inline-block;
-  position: absolute;
-  bottom: 0;
-} */
-
 .cases-list {
   text-align: center;
+  /* position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  transition: 0.7s ease-in-out;
+  transform: translateY(80%); */
 }
+

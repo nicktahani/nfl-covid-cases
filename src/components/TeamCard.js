@@ -8,7 +8,6 @@ const TeamCard = ({ team, data }) => {
   
   const toggleOpen = () => {
     setIsOpen(!isOpen)
-    console.log(team)
   }
 
   return (
