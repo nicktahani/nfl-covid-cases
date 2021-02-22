@@ -8,6 +8,8 @@ import { axisLeft, axisBottom } from 'd3-axis'
 
 function LineChart ({ width = 900, height = 700, data }) {
   const svg = useRef()
+  const xAxis = useRef()
+  const yAxis = useRef()
   const margin = {top: 20, right: 30, bottom: 30, left: 40}
 
   const nestedData = nest() 
@@ -15,21 +17,18 @@ function LineChart ({ width = 900, height = 700, data }) {
     .rollup(d => d.length)
     .entries(data)
 
-    console.log(nestedData)
+  // console.log(nestedData)
 
   useEffect(() => {
     if (!svg.current) return;
     
-    const svgNode = select(svg.current)
     const XaxisGenerator = axisBottom(xScale)
     const YaxisGenerator = axisLeft(yScale)
     
-    svgNode.append('g')
-      .attr("transform", `translate(0, ${height - margin.bottom})`)
+    select(xAxis.current)
       .call(XaxisGenerator)
     
-    svgNode.append('g')
-      .attr("transform", `translate(${margin.left}, 0)`)
+    select(yAxis.current)
       .call(YaxisGenerator)
 
   }, [])
@@ -59,6 +58,8 @@ function LineChart ({ width = 900, height = 700, data }) {
         d={path(nestedData)}
         style={{ fill: 'none', stroke: 'steelblue', strokeWidth: '2' }} //clean up 
       />
+      <g ref={xAxis} transform={`translate(0, ${height - margin.bottom})`} />
+      <g ref={yAxis} transform={`translate(${margin.left}, 0)`} />
     </svg>
   )
 }
