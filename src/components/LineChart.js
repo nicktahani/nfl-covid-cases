@@ -6,7 +6,7 @@ import { nest } from 'd3-collection'
 import { select } from 'd3-selection'
 import { axisLeft, axisBottom } from 'd3-axis'
 
-function LineChart ({ width = 900, height = 700, data }) {
+function LineChart ({ width = 900, height = 550, data }) {
   const svg = useRef()
   const xAxis = useRef()
   const yAxis = useRef()
@@ -14,10 +14,11 @@ function LineChart ({ width = 900, height = 700, data }) {
 
   const nestedData = nest() 
     .key(d => d.week)
+    .sortKeys((a, b) => a - b)
     .rollup(d => d.length)
     .entries(data)
 
-  // console.log(nestedData)
+  console.log(height - margin.bottom)
 
   useEffect(() => {
     if (!svg.current) return;

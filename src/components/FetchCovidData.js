@@ -6,7 +6,7 @@ import { NFL_TEAM_LOGOS } from '../constants/teams'
 import LineChart from './LineChart'
 // import useFetchData from './useFetchData'
 
-const url = './data/nflcovid.csv' //in public/
+const url = './data/nfl_covid.csv' //in public/
 
 const deserializer = d => {
   return {
