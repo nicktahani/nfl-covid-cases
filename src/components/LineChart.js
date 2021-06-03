@@ -12,13 +12,16 @@ function LineChart ({ width = 900, height = 550, data }) {
   const yAxis = useRef()
   const margin = {top: 20, right: 30, bottom: 30, left: 40}
 
-  const nestedData = nest() 
-    .key(d => d.week)
-    .sortKeys((a, b) => a - b)
-    .rollup(d => d.length)
-    .entries(data)
+  const nestedData = useMemo(() => 
+    nest() 
+      .key(d => d.week)
+      .sortKeys((a, b) => a - b)
+      .rollup(d => d.length)
+      .entries(data),
+      [data]
+  )
 
-  console.log(height - margin.bottom)
+  // console.log(nestedData)
 
   useEffect(() => {
     if (!svg.current) return;
@@ -38,13 +41,13 @@ function LineChart ({ width = 900, height = 550, data }) {
     scalePoint()
       .domain(nestedData.map(d => d.key))
       .range([margin.left, width - margin.right]), 
-      [nestedData]
+      [nestedData, width, margin]
   )
   const yScale = useMemo(() => 
     scaleLinear()
       .domain(extent(nestedData, d => d.value))
       .range([height - margin.bottom, margin.top]), 
-      [nestedData]
+      [nestedData, height, margin]
   )
   const path = useMemo(() => 
     line()
