@@ -1,3 +1,4 @@
+//not being rendered but will leave here for future reference
 import React, { useMemo, useRef, useEffect } from 'react'
 import { extent } from 'd3-array'
 import { scaleLinear, scalePoint } from 'd3-scale'
@@ -60,7 +61,7 @@ function LineChart ({ width = 900, height = 550, data }) {
     <svg ref={svg} width={width} height={height}>
       <path 
         d={path(nestedData)}
-        style={{ fill: 'none', stroke: 'steelblue', strokeWidth: '2' }} //clean up 
+        style={{ fill: 'none', stroke: 'steelblue', strokeWidth: '2' }}
       />
       <g ref={xAxis} transform={`translate(0, ${height - margin.bottom})`} />
       <g ref={yAxis} transform={`translate(${margin.left}, 0)`} />
