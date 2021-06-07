@@ -4,6 +4,7 @@ import { csv } from 'd3'
 import TeamCard from './TeamCard'
 import { NFL_TEAM_LOGOS } from '../constants/teams'
 import LineChart from './LineChart'
+import { Multiples } from './Multiples'
 // import useFetchData from './useFetchData'
 
 const url = './data/nfl_covid.csv' //in public/
@@ -17,14 +18,14 @@ const deserializer = d => {
 
 const FetchCovidData = () => {
   const [error, setError] = useState(false)
-  const [data, setData] = useState(null)
+  const [rawData, setRawData] = useState(null)
   const [isFetching, setIsFetching] = useState(true)
 
   useEffect(() => {
     csv(url, deserializer)
       .then(data => {
         setIsFetching(false)
-        setData(data)
+        setRawData(data)
       })
       .catch(err => {
         setIsFetching(false)
@@ -38,11 +39,11 @@ const FetchCovidData = () => {
 
   return (
     <>
-    {data &&
+    {rawData &&
     <>
-      <LineChart data={data} />
+      <Multiples rawData={rawData} />
       <div className='logo-grid'>
-        {NFL_TEAM_LOGOS.map(team => <TeamCard team={team} key={team} data={data} />)}
+        {NFL_TEAM_LOGOS.map(team => <TeamCard team={team} key={team} rawData={rawData} />)}
       </div>
       </>
     }

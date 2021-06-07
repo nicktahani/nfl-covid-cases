@@ -4,23 +4,20 @@ import React, { useState, useEffect, useMemo } from 'react'
 import { scalePoint } from 'd3-scale'
 import { csv } from 'd3-fetch'
 import { Chart } from './Chart'
-import {getTeamCounts, getTeams, getYScale, getChartData, height, margin} from './util/index.js'
+import {getTeamCounts, getTeams, getYScale, getChartData, height, margin} from '../util/chartData.js'
 
 const chartHeight = 250
 const chartWidth = 250
 
-export function ChartDemo () {
-  const [rawData, setRawData] = useState(null)
+export function Multiples ({ rawData }) {
   const [tooltipDate, setTooltipDate] = useState(null)
-
-  useEffect(() => {
-    csv('/data/nfl_covid.csv').then(data => setRawData(data))
-  }, [])
   
   const teamCounts = useMemo(() => {
     if (!rawData) return;
     return getTeamCounts(rawData)
   }, [rawData])
+
+  console.log(teamCounts)
 
   //xScale domain: ["0", "1", ..."14"], range: [50, 200] 
   //yScale domain: [0, 18], range: [200, 50]
