@@ -3,7 +3,7 @@ import PlayerList from './PlayerList'
 import TeamLogo from './TeamLogo'
 import '../css/TeamCard.css'
 
-const TeamCard = ({ team, data }) => {
+const TeamCard = ({ team, rawData }) => {
   const [isOpen, setIsOpen] = useState(false)
   
   const toggleOpen = () => {
@@ -19,7 +19,7 @@ const TeamCard = ({ team, data }) => {
           height='200px'
         />
       </div>
-      {isOpen && <PlayerList team={team} data={data} />}
+      {isOpen && <PlayerList team={team} rawData={rawData} />}
     </div>
   )
 }

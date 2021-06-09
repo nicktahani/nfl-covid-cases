@@ -1,11 +1,11 @@
 import React from 'react'
 import '../css/PlayerList.css'
 
-const PlayerList = ({ team, data }) => {
+const PlayerList = ({ team, rawData }) => {
 
   return (
     <div className='cases-list'>
-      {data.filter(d => d.team_id === team).map((d, i) => (
+      {rawData.filter(d => d.team_id === team).map((d, i) => (
         <div key={i}>{d.list}</div>
         // console.log(d.list)
       ))}
