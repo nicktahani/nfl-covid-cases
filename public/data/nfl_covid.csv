@@ -228,15 +228,15 @@ Max,Scharping,10/30/2020,8,Texans,OT,HOU
 Matthew ,Adams,11/11/2020,10,Colts,LB,IND
 Jonathan,Taylor,11/28/2020,12,Colts,RB,IND
 Chase,McLaughlin,11/24/2020,12,Jaguars,K,JAX
-Jonathan,Abram,11/18/2020,11,Raiders,DB,LV
-Maliek,Collins,11/18/2020,11,Raiders,DT,LV
-Johnathan,Hankins,11/18/2020,11,Raiders,DT,LV
-Isaiah,Johnson,11/18/2020,11,Raiders,DB,LV
-Arden,Key,11/18/2020,11,Raiders,DE,LV
-Kendal,Vickers,11/18/2020,11,Raiders,DT,LV
-Clelin,Ferrell,11/17/2020,11,Raiders,DE,LV
-Lamarcus,Joyner,11/17/2020,11,Raiders,DB,LV
-Theo,Riddick,11/21/2020,11,Raiders,RB,LV
+Jonathan,Abram,11/18/2020,11,Raiders,DB,OAK
+Maliek,Collins,11/18/2020,11,Raiders,DT,OAK
+Johnathan,Hankins,11/18/2020,11,Raiders,DT,OAK
+Isaiah,Johnson,11/18/2020,11,Raiders,DB,OAK
+Arden,Key,11/18/2020,11,Raiders,DE,OAK
+Kendal,Vickers,11/18/2020,11,Raiders,DT,OAK
+Clelin,Ferrell,11/17/2020,11,Raiders,DE,OAK
+Lamarcus,Joyner,11/17/2020,11,Raiders,DB,OAK
+Theo,Riddick,11/21/2020,11,Raiders,RB,OAK
 Lynn,Bowden,11/6/2020,9,Dolphins,RB,MIA
 Kyle ,Van Noy,11/12/2020,10,Dolphins,LB,MIA
 Jesse,Davis,11/23/2020,11,Dolphins,OT,MIA
@@ -266,7 +266,7 @@ Jordan,Willis,11/23/2020,11,49ers,DE,SF
 Jaydon,Mickens,11/14/2020,10,Buccaneers,WR,TB
 Holton,Hill,11/10/2020,10,Vikings,DB,MIN
 Inman,Marshall,11/12/2020,10,Ravens,DB,BAL
-Cory,Littleton,11/12/2020,10,Raiders,LB,LV
+Cory,Littleton,11/12/2020,10,Raiders,LB,OAK
 David,Long,11/16/2020,10,Titans,LB,TEN
 Matt,Ionnidis,11/17/2020,11,Washington,DT,WAS
 Kyzir,White,11/21/2020,11,Chargers,LB,LAC
@@ -297,7 +297,7 @@ Yetur,Gross-Matos,11/30/2020,12,Panthers,DE,CAR
 Julian,Edelman,11/30/2020,12,Patriots,WR,NE
 Geno,Stone,12/2/2020,13,Ravens,DB,BAL
 Maurkice,Pouncey,12/2/2020,13,Steelers,C,PIT
-Tanner,Muse,12/3/2020,13,Raiders,LB,LV
+Tanner,Muse,12/3/2020,13,Raiders,LB,OAK
 Larry,Fitzgerald,11/26/2020,12,Cardinals,WR,ARI
 Calais,Campbell,11/25/2020,12,Ravens,DE,BAL
 Jihad,Ward,11/25/2020,12,Ravens,DE,BAL

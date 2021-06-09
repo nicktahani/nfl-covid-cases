@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import PlayerList from './PlayerList'
-import TeamLogo from './TeamLogo'
+import { PlayerList } from './PlayerList'
+import { TeamLogo } from './TeamLogo'
 import '../css/TeamCard.css'
 
-const TeamCard = ({ team, rawData }) => {
+export function TeamCard({ team, rawData }) {
   const [isOpen, setIsOpen] = useState(false)
   
   const toggleOpen = () => {
@@ -23,5 +23,3 @@ const TeamCard = ({ team, rawData }) => {
     </div>
   )
 }
-
-export default TeamCard

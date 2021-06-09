@@ -1,7 +1,7 @@
 import React from 'react'
 import '../css/TeamLogo.css'
 
-const TeamLogo = ({ team, ...imgProps }) => {
+export function TeamLogo({ team, ...imgProps }) {
   
   return (
     <>
@@ -14,5 +14,3 @@ const TeamLogo = ({ team, ...imgProps }) => {
   )
 
 }
-
-export default TeamLogo

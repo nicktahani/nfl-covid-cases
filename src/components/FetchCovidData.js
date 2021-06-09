@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import '../css/TeamLogo.css'
-import { csv } from 'd3'
-import TeamCard from './TeamCard'
+import { csv } from 'd3-fetch'
+import { TeamCard } from './TeamCard'
 import { NFL_TEAM_LOGOS } from '../constants/teams'
-// import LineChart from './LineChart'
 import { Multiples } from './Multiples'
 // import useFetchData from './useFetchData'
 
@@ -16,7 +15,7 @@ const deserializer = d => {
   }
 }
 
-const FetchCovidData = () => {
+export function FetchCovidData() {
   const [error, setError] = useState(false)
   const [rawData, setRawData] = useState(null)
   const [isFetching, setIsFetching] = useState(true)
@@ -50,5 +49,3 @@ const FetchCovidData = () => {
     </>
   )
 }
-
-export default FetchCovidData

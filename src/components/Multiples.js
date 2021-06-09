@@ -1,8 +1,7 @@
 //TODO: dont fetch in here, pass from above
 
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useState, useMemo } from 'react'
 import { scalePoint } from 'd3-scale'
-import { csv } from 'd3-fetch'
 import { Chart } from './Chart'
 import {getTeamCounts, getTeams, getYScale, getChartData, height, margin} from '../util/chartData.js'
 
@@ -16,8 +15,6 @@ export function Multiples ({ rawData }) {
     if (!rawData) return;
     return getTeamCounts(rawData)
   }, [rawData])
-
-  console.log(teamCounts)
 
   //xScale domain: ["0", "1", ..."14"], range: [50, 200] 
   //yScale domain: [0, 18], range: [200, 50]

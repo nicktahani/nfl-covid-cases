@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import InfoBox from './components/InfoBox';
-import FetchCovidData from './components/FetchCovidData';
+import { InfoBox } from './components/InfoBox';
+import { FetchCovidData } from './components/FetchCovidData';
 
 
 function App() {
