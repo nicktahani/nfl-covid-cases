@@ -38,14 +38,14 @@ export function FetchCovidData() {
 
   return (
     <>
-    {rawData &&
-    <>
-      <Multiples rawData={rawData} />
-      <div className='logo-grid'>
-        {NFL_TEAM_LOGOS.map(team => <TeamCard team={team} key={team} rawData={rawData} />)}
-      </div>
-      </>
-    }
+      {rawData &&
+        <>
+          <Multiples rawData={rawData} />
+          <div className='logo-grid'>
+            {NFL_TEAM_LOGOS.map(team => <TeamCard team={team} key={team} rawData={rawData} />)}
+          </div>
+        </>
+      }
     </>
   )
 }

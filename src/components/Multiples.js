@@ -90,6 +90,13 @@ export function Multiples ({ rawData }) {
               >
                 {data.find(d => d[0] === tooltipDate)[1]}
               </text>
+              <text
+                x={chartWidth / 2}
+                y={chartHeight - 10}
+                style={{fontSize: '0.75em'}}
+              >
+                {`Week ${data.find(d => d[0] === tooltipDate)[0]}`}
+              </text>
             </g>
           }
         </svg>
