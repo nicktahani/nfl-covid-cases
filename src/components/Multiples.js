@@ -4,6 +4,7 @@ import React, { useState, useMemo } from 'react'
 import { scalePoint } from 'd3-scale'
 import { Chart } from './Chart'
 import {getTeamCounts, getTeams, getYScale, getChartData, height, margin} from '../util/chartData.js'
+import { InfoBox } from './InfoBox'
 
 const chartHeight = 250
 const chartWidth = 250
@@ -55,52 +56,58 @@ export function Multiples ({ rawData }) {
   // console.log(tooltipX)
 
   return (
-    <div className='chart-grid'>
-      {derived.teamData && derived.teamData.map(({team, data}) => 
-        <svg width={chartWidth} height={chartHeight}
-          onMouseMove={showTooltip}
-          onMouseOut={hideTooltip}
-          key={team}
-        >
-          <text
-            x={chartWidth / 2}
-            y={margin.top}
-            style={{ fontWeight: 'bold', fontSize: '1.25em' }}
+    <>
+      <InfoBox 
+        header='Counts by Week' 
+        description={`There was a reported total of ${rawData.length} cases (preseason and regular season). The charts below show each teams cases on a weekly basis. Hover over the charts to see the counts for that week.`} 
+      />
+      <div className='chart-grid'>
+        {derived.teamData && derived.teamData.map(({team, data}) => 
+          <svg width={chartWidth} height={chartHeight}
+            onMouseMove={showTooltip}
+            onMouseOut={hideTooltip}
+            key={team}
           >
-            {team}
-          </text>
-          <Chart
-            data={data}
-            xScale={derived.xScale}
-            yScale={derived.yScale}
-          />
-          {tooltipDate !== null && tooltipDate !== undefined &&
-            <g>
-              <line
-                x1={tooltipX}
-                y1={margin.top}
-                x2={tooltipX}
-                y2={chartHeight - margin.bottom}
-                style={{stroke: '#999', strokeDasharray: 5}}
-              />
-              <text
-                x={tooltipX + 5}
-                y={derived.yScale(data.find(d => d[0] === tooltipDate)[1])}
-                style={{fill: '#000', fontWeight: 'bold', fontSize: '1.15em'}}
-              >
-                {data.find(d => d[0] === tooltipDate)[1]}
-              </text>
-              <text
-                x={chartWidth / 2}
-                y={chartHeight - 10}
-                style={{fontSize: '0.75em'}}
-              >
-                {`Week ${data.find(d => d[0] === tooltipDate)[0]}`}
-              </text>
-            </g>
-          }
-        </svg>
-      )}
-  </div>
+            <text
+              x={chartWidth / 2}
+              y={margin.top}
+              style={{ fontWeight: 'bold', fontSize: '1.25em' }}
+            >
+              {team}
+            </text>
+            <Chart
+              data={data}
+              xScale={derived.xScale}
+              yScale={derived.yScale}
+            />
+            {tooltipDate !== null && tooltipDate !== undefined &&
+              <g>
+                <line
+                  x1={tooltipX}
+                  y1={margin.top}
+                  x2={tooltipX}
+                  y2={chartHeight - margin.bottom}
+                  style={{stroke: '#999', strokeDasharray: 5}}
+                />
+                <text
+                  x={tooltipX + 5}
+                  y={derived.yScale(data.find(d => d[0] === tooltipDate)[1])}
+                  style={{fill: '#000', fontWeight: 'bold', fontSize: '1.15em'}}
+                >
+                  {data.find(d => d[0] === tooltipDate)[1]}
+                </text>
+                <text
+                  x={chartWidth / 2}
+                  y={chartHeight - 10}
+                  style={{fontSize: '0.75em'}}
+                >
+                  {`Week ${data.find(d => d[0] === tooltipDate)[0]}`}
+                </text>
+              </g>
+            }
+          </svg>
+        )}
+    </div>
+  </>
   )
 }
