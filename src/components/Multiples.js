@@ -4,7 +4,6 @@ import React, { useState, useMemo } from 'react'
 import { scalePoint } from 'd3-scale'
 import { Chart } from './Chart'
 import {getTeamCounts, getTeams, getYScale, getChartData, height, margin} from '../util/chartData.js'
-import { InfoBox } from './InfoBox'
 
 const chartHeight = 250
 const chartWidth = 250
@@ -57,10 +56,6 @@ export function Multiples ({ rawData }) {
 
   return (
     <>
-      <InfoBox 
-        header='Counts by Week' 
-        description={`There was a reported total of ${rawData.length} cases (preseason and regular season). The charts below show each teams cases on a weekly basis. Hover over the charts to see the counts for that week.`} 
-      />
       <div className='chart-grid'>
         {derived.teamData && derived.teamData.map(({team, data}) => 
           <svg width={chartWidth} height={chartHeight}
