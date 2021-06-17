@@ -49,9 +49,15 @@ export function FetchCovidData() {
             <li>
               As there were no strict covid protocols in the pre-season (week 0), we can see a huge spike before the regular season begins and the protocols are put in place
             </li>
-            <li>We can also notice that there's no reported cases for any team during weeks 1-3, perhaps due to teams being extra cautious in the early portion of the season</li>
-            <li>Ultimately, Baltimore led all teams with 18 cases for a single week and 34 cases overall, while... </li>
-            <li>It's also worth noting that some teams who had higher case counts in the pre-season actually reversed course and fared much better in the end (Jacksonville, Detroit, etc.)</li>
+            <li>
+              We can also notice that there's no reported cases for any team during weeks 1-3, perhaps due to teams being extra cautious in the early portion of the season
+            </li>
+            <li>
+              Geographically, there was a correlation between high pre-season case counts and teams who were located in states that struggled with the pandemic. However, some of these teams were able to buck the trend throughout the season and keep cases quite low(Jacksonville, Miami, and Atlanta among others)
+            </li>
+            <li>
+              Ultimately, Baltimore led all teams with 18 cases for a single week and 34 cases overall, while... 
+            </li>
           </ul>
           <Multiples rawData={rawData} />
           <InfoBox 
