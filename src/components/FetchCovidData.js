@@ -10,9 +10,11 @@ import { InfoBox } from './InfoBox'
 const url = './data/nfl_covid.csv' //in public/
 
 const deserializer = d => {
+  const weekNum = d.week > 0 ? `Week ${d.week}` : 'preseason'
+
   return {
     ...d,
-    list: `${d.first} ${d.last} (${d.position})`, //TODO: filter case list by week
+    list: `${d.first} ${d.last} (${d.position}) -- ${weekNum}` //TODO: filter case list by week
   }
 }
 
@@ -33,6 +35,8 @@ export function FetchCovidData() {
       })
   }, [])
 
+  console.log(rawData && rawData.filter(d => d.team_id === 'BAL'))
+
   if (isFetching) {
     return <div>Loading...</div>
   }
@@ -50,13 +54,13 @@ export function FetchCovidData() {
               As there were no strict covid protocols in the pre-season (week 0), we can see a huge spike before the regular season begins and the protocols are put in place
             </li>
             <li>
-              We can also notice that there's no reported cases for any team during weeks 1-3, perhaps due to teams being extra cautious in the early portion of the season
+              Also notice that there's no reported cases for any team during weeks 1-3, perhaps due to teams being extra cautious in the early portion of the season
             </li>
             <li>
-              Geographically, there was a correlation between high pre-season case counts and teams who were located in states that struggled with the pandemic. However, some of these teams were able to buck the trend throughout the season and keep cases quite low(Jacksonville, Miami, and Atlanta among others)
+              There was a correlation between high pre-season case counts and teams who were located in states that struggled with the pandemic. However, some of these teams were able to buck the trend throughout the season and keep cases quite low (Jacksonville, Miami, and Atlanta among others)
             </li>
             <li>
-              Ultimately, Baltimore led all teams with 18 cases for a single week and 34 cases overall, while... 
+              Ultimately, Baltimore led all teams with 18 cases for a single week and 34 cases overall, while Seattle, LA Rams, and Washington had the least amount of overall cases with 2
             </li>
           </ul>
           <Multiples rawData={rawData} />
