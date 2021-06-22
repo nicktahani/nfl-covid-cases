@@ -10,7 +10,7 @@ import { InfoBox } from './InfoBox'
 const url = './data/nfl_covid.csv' //in public/
 
 const deserializer = d => {
-  const weekNum = d.week > 0 ? `Week ${d.week}` : 'preseason'
+  const weekNum = d.week > 0 ? `Week ${d.week}` : 'Preseason'
 
   return {
     ...d,
@@ -60,7 +60,7 @@ export function FetchCovidData() {
               There was a correlation between high pre-season case counts and teams who were located in states that struggled with the pandemic. However, some of these teams were able to buck the trend throughout the season and keep cases quite low (Jacksonville, Miami, and Atlanta among others)
             </li>
             <li>
-              Ultimately, Baltimore led all teams with 18 cases for a single week and 34 cases overall, while Seattle, LA Rams, and Washington had the least amount of overall cases with 2
+              Ultimately, Baltimore led all teams with 18 cases for a single week and 34 cases overall, while Seattle, the LA Rams, and Washington had the least amount of overall cases with 2
             </li>
           </ul>
           <Multiples rawData={rawData} />
