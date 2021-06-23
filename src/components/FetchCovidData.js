@@ -5,6 +5,8 @@ import { TeamCard } from './TeamCard'
 import { NFL_TEAM_LOGOS } from '../constants/teams'
 import { Multiples } from './Multiples'
 import { InfoBox } from './InfoBox'
+import { BulletList } from './BulletList'
+import { multiplesBullets } from '../constants/bullets'
 // import useFetchData from './useFetchData'
 
 const url = './data/nfl_covid.csv' //in public/
@@ -49,20 +51,7 @@ export function FetchCovidData() {
             header='Team Counts by Week' 
             description={`There was a reported total of ${rawData.length} cases (pre-season and regular season). The charts below show each teams cases on a weekly basis. Hover over the charts to see the counts for that week.`} 
           />
-          <ul>
-            <li>
-              As there were no strict covid protocols in the pre-season (week 0), we can see a huge spike before the regular season begins and the protocols are put in place
-            </li>
-            <li>
-              Also notice that there's no reported cases for any team during weeks 1-3, perhaps due to teams being extra cautious in the early portion of the season
-            </li>
-            <li>
-              There was a correlation between high pre-season case counts and teams who were located in states that struggled with the pandemic. However, some of these teams were able to buck the trend throughout the season and keep cases quite low (Jacksonville, Miami, and Atlanta among others)
-            </li>
-            <li>
-              Ultimately, Baltimore led all teams with 18 cases for a single week and 34 cases overall, while Seattle, the LA Rams, and Washington had the least amount of overall cases with 2
-            </li>
-          </ul>
+          <BulletList items={multiplesBullets} />
           <Multiples rawData={rawData} />
           <InfoBox 
             header='Lists by Team'
