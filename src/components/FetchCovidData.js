@@ -6,7 +6,7 @@ import { NFL_TEAM_LOGOS } from '../constants/teams'
 import { Multiples } from './Multiples'
 import { InfoBox } from './InfoBox'
 import { BulletList } from './BulletList'
-import { multiplesBullets } from '../constants/bullets'
+import { multiplesBullets, logoBullets } from '../constants/bullets'
 // import useFetchData from './useFetchData'
 
 const url = './data/nfl_covid.csv' //in public/
@@ -54,9 +54,10 @@ export function FetchCovidData() {
           <BulletList items={multiplesBullets} />
           <Multiples rawData={rawData} />
           <InfoBox 
-            header='Lists by Team'
-            description='Click on the logos to see the players who were placed on the list of their respective teams.' 
+            header='Player Lists by Team'
+            description='Click on the logos to see the players who were placed on the COVID list of their respective teams.' 
           />
+          <BulletList items={logoBullets} />
           <div className='logo-grid'>
             {NFL_TEAM_LOGOS.map(team => <TeamCard team={team} key={team} rawData={rawData} />)}
           </div>
