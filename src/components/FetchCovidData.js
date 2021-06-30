@@ -37,8 +37,6 @@ export function FetchCovidData() {
       })
   }, [])
 
-  console.log(rawData && rawData.filter(d => d.team_id === 'BAL'))
-
   if (isFetching) {
     return <div>Loading...</div>
   }

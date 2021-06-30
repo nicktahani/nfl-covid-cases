@@ -66,7 +66,7 @@ export function Multiples ({ rawData }) {
             <text
               x={chartWidth / 2}
               y={margin.top}
-              style={{ fontWeight: 'bold', fontSize: '1.25em' }}
+              style={{fontWeight: 'bold', fontSize: '1.25em', textAnchor: 'middle'}}
             >
               {team}
             </text>
@@ -94,7 +94,7 @@ export function Multiples ({ rawData }) {
                 <text
                   x={chartWidth / 2}
                   y={chartHeight - 10}
-                  style={{fontSize: '0.75em'}}
+                  style={{fontSize: '0.75em', textAnchor: 'middle'}}
                 >
                   {`Week ${data.find(d => d[0] === tooltipDate)[0]}`}
                 </text>
