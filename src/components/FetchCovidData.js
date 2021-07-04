@@ -16,6 +16,7 @@ const deserializer = d => {
 
   return {
     ...d,
+    name: `${d.first} ${d.last}`,
     list: `${d.first} ${d.last} (${d.position}) -- ${weekNum}` //TODO: filter case list by week
   }
 }

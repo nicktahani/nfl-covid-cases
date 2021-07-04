@@ -29,6 +29,8 @@ export function Multiples ({ rawData }) {
       teamData: getChartData(teamCounts)
     }
   }, [teamCounts])
+
+  // console.log(derived.teamData.map(({data}) => data.map(d => d[0])))
   
  
   if (!derived) return 'Loading'

@@ -14,3 +14,7 @@ ul {
   max-width: 50%;
 }
 
+p, li {
+  font-size: 14px;
+}
+
