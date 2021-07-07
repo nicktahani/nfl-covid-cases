@@ -3,11 +3,9 @@
 import React from 'react'
 import '../css/PlayerList.css'
 import { nest } from 'd3-collection'
+import { ascending } from 'd3-array'
 
 export function PlayerList({ team, rawData }) {
-
-
-
   const nested = nest()
     .key(d => d.team_id)
     .key(d => d.week)
@@ -16,36 +14,34 @@ export function PlayerList({ team, rawData }) {
     })
     .object(rawData)
 
-    // Object.values(nested)
 
-    // const dataArr = []
-    // for (let team in nest) {
-    //   const weekNums = Object.values(nest[team])
-    //   console.log(weekNums)
-    //   // console.log(weekNums.map(d => d.data.map(d => `${d.name}`)))
-    //   dataArr.push({team: team, cases: weekNums})
-    // }
-    // return dataArr
+  // const weeks = Object.entries(nested).filter(teams => teams[0] === team)
 
-    const test = Object.entries(nested).filter(teams => teams[0] === team).map(d => d[1])
-    // console.log(test)
+  const teamData = nest()
+    .key(d => d.team_id)
+    .object(rawData)[team]
+  
+    console.log(teamData)
 
-    console.log(Object.entries(nested).map(d => Object.values(d[1])))
+  const weeks = nest()
+    .key(d => d.week)
+    .sortKeys((a, b) => ascending(+a.week, +b.week))
+    .entries(teamData)
+
+  console.log(weeks)
 
   return (
     <div>
-      {Object.entries(nested).filter(teams => teams[0] === team).map((d, i) => (
-        <div key={i}>
-          <h3>{`Week ${Object.keys(d[1])}`}</h3>
+      {weeks.map(({key: week, values: players}) =>
+        <div key={week}>
+          <h3>{`Week ${week}`}</h3>
           <ul>
-            {Object.values(d[1]).map(({data}) => (
-              <li>
-                {data.map(d => d.name).join(' ')}
-              </li>
-            ))}
+            {players.map(player =>
+              <li key={player.name}>{player.name}</li>
+            )}
           </ul>
         </div>
-      ))}
+      )}
     </div>
   )
 }

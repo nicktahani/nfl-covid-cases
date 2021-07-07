@@ -12,12 +12,10 @@ import { multiplesBullets, logoBullets } from '../constants/bullets'
 const url = './data/nfl_covid.csv' //in public/
 
 const deserializer = d => {
-  const weekNum = d.week > 0 ? `Week ${d.week}` : 'Preseason'
 
   return {
     ...d,
-    name: `${d.first} ${d.last}`,
-    list: `${d.first} ${d.last} (${d.position}) -- ${weekNum}` //TODO: filter case list by week
+    name: `${d.first} ${d.last}`
   }
 }
 
