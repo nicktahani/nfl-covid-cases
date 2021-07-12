@@ -24,8 +24,8 @@ export function PlayerList({ team, rawData }) {
     console.log(teamData)
 
   const weeks = nest()
-    .key(d => d.week)
-    .sortKeys((a, b) => ascending(+a.week, +b.week))
+    .key(d => +d.week)
+    .sortKeys((a, b) => a - b)
     .entries(teamData)
 
   console.log(weeks)
@@ -34,7 +34,7 @@ export function PlayerList({ team, rawData }) {
     <div>
       {weeks.map(({key: week, values: players}) =>
         <div key={week}>
-          <h3>{`Week ${week}`}</h3>
+          <h3>{week > 0 ? `Week ${week}` : 'Preseason'}</h3>
           <ul>
             {players.map(player =>
               <li key={player.name}>{player.name}</li>
