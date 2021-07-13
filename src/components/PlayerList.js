@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import '../css/PlayerList.css'
 import { nest } from 'd3-collection'
-import { useMemo } from 'react'
 
 export function PlayerList({ team, rawData }) {
   const teamData = useMemo(() => 
@@ -21,13 +20,13 @@ export function PlayerList({ team, rawData }) {
   
 
   return (
-    <div>
+    <div className='list'>
       {weeks.map(({key: week, values: players}) =>
         <div key={week}>
-          <h3>{week > 0 ? `Week ${week}` : 'Preseason'}</h3>
+          <h3 className=''>{week > 0 ? `Week ${week}` : 'Preseason'}</h3>
           <ul>
             {players.map(player =>
-              <li key={player.name}>{player.name}</li>
+              <li key={player.name}>{`${player.name} (${player.position})`}</li>
             )}
           </ul>
         </div>
