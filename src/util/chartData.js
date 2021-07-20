@@ -5,11 +5,11 @@ export const height = 250
 export const margin = {top: 50, right: 50, bottom: 50, left: 50}
 
 
-export function getTeams (teamCounts) {
+export function getTeams(teamCounts) {
   return [...Object.keys(teamCounts)] 
 }
 
-export function getTeamCounts (cases_data) {
+export function getTeamCounts(cases_data) {
   // { total: { {week: 0, caseCount: 100}}, TEN: {{week: 0, caseCount: 100}, ...}, ...}
   let nest = {total: {}}
 
@@ -42,7 +42,7 @@ export function getTeamCounts (cases_data) {
 }
 
 
-export function getYScale (teamCounts) {
+export function getYScale(teamCounts) {
   let currentMaximum = 0
 
   for (let team in teamCounts) {
@@ -65,7 +65,7 @@ export function getYScale (teamCounts) {
     .range([height - margin.bottom, margin.top])
 }
 
-export function getChartData (teamCounts) {
+export function getChartData(teamCounts) {
   const data = []
   for (let team in teamCounts) {
     if (team === 'total') continue; 

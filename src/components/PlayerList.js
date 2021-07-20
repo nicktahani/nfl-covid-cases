@@ -1,13 +1,21 @@
-import React, { useMemo } from 'react'
+import React, { useEffect, useMemo, useRef } from 'react'
 import '../css/PlayerList.css'
 import { nest } from 'd3-collection'
 
 export function PlayerList({ team, rawData }) {
+  const fieldRef = useRef()
+
+  useEffect(() => {    
+    if (fieldRef.current) {      
+      fieldRef.current.scrollIntoView()   
+    }  
+  }, [])
+
   const teamData = useMemo(() => 
     nest()
       .key(d => d.team_id)
       .object(rawData)[team],
-      [rawData]
+      [rawData, team]
   )
 
   const weeks = useMemo(() =>
@@ -20,10 +28,10 @@ export function PlayerList({ team, rawData }) {
   
 
   return (
-    <div className='list'>
+    <div className='list' ref={fieldRef}>
       {weeks.map(({key: week, values: players}) =>
         <div key={week}>
-          <h3 className=''>{week > 0 ? `Week ${week}` : 'Preseason'}</h3>
+          <h3>{week > 0 ? `Week ${week}` : 'Preseason'}</h3>
           <ul>
             {players.map(player =>
               <li key={player.name}>{`${player.name} (${player.position})`}</li>

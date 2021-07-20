@@ -8,7 +8,7 @@ import {getTeamCounts, getTeams, getYScale, getChartData, height, margin} from '
 const chartHeight = 250
 const chartWidth = 250
 
-export function Multiples ({ rawData }) {
+export function Multiples({ rawData }) {
   const [tooltipDate, setTooltipDate] = useState(null)
   
   const teamCounts = useMemo(() => {
