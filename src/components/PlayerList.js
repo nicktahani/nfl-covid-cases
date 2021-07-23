@@ -3,14 +3,15 @@ import '../css/PlayerList.css'
 import { nest } from 'd3-collection'
 
 export function PlayerList({ team, rawData }) {
-  const fieldRef = useRef()
+  const listRef = useRef()
 
   useEffect(() => {    
-    if (fieldRef.current) {
-      fieldRef.current.scrollIntoView({
+    if (listRef.current) {
+      listRef.current.scrollIntoView({
         behavior: 'smooth',
-        block: 'end',
-        inline: 'nearest'})
+        block: 'center',
+        inline: 'nearest'
+      })
     }
   }, [])
 
@@ -31,7 +32,7 @@ export function PlayerList({ team, rawData }) {
   
 
   return (
-    <div className='list' ref={fieldRef}>
+    <div className='list' ref={listRef}>
       {weeks.map(({key: week, values: players}) =>
         <div key={week}>
           <h3>{week > 0 ? `Week ${week}` : 'Preseason'}</h3>

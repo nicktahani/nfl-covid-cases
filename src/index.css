@@ -8,6 +8,11 @@
   src: local("Roboto-Black"), url("./fonts/Roboto-Black.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "UnicaOne-Regular";
+  src: local("UnicaOne-Regular"), url("./fonts/UnicaOne-Regular.ttf") format("truetype");
+}
+
 body {
   margin: 0;
   font-family: Roboto-Regular, sans-serif;
@@ -15,8 +20,9 @@ body {
 }
 
 .header {
-  font-family: Roboto-Black;
-  font-size: 3em;
+  font-family: UnicaOne-Regular;
+  font-size: 4em;
+font-weight: bold;
 }
 
 
