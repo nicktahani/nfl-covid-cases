@@ -6,9 +6,12 @@ export function PlayerList({ team, rawData }) {
   const fieldRef = useRef()
 
   useEffect(() => {    
-    if (fieldRef.current) {      
-      fieldRef.current.scrollIntoView()   
-    }  
+    if (fieldRef.current) {
+      fieldRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'end',
+        inline: 'nearest'})
+    }
   }, [])
 
   const teamData = useMemo(() => 
