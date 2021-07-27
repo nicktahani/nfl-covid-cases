@@ -14,7 +14,7 @@ export const NFL_TEAM_LOGOS = [
   'JAX',
   'DEN',
   'KC',
-  'OAK', 
+  'LV', 
   'LAC', 
   'DAL', 
   'NYG', 
