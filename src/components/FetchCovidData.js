@@ -52,7 +52,7 @@ export function FetchCovidData() {
           <Multiples rawData={rawData} />
           <InfoBox 
             header='Player Lists by Team'
-            description='Click on the logos to see the players who were placed on the COVID list of their respective teams.' 
+            description='A main concern was the occurence of an entire positional group being placed on the list, a couple of teams experienced this... the games went about as well as you would imagine. Click on the logos to see the players who were placed on the COVID list of their respective teams.' 
           />
           <BulletList items={logoBullets} />
           <div className='logo-grid'>
