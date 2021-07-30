@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/nfl-covid-cases/static/css/main.45f1f38d.chunk.css",
+    "main.js": "/nfl-covid-cases/static/js/main.1603cf1a.chunk.js",
+    "main.js.map": "/nfl-covid-cases/static/js/main.1603cf1a.chunk.js.map",
+    "runtime-main.js": "/nfl-covid-cases/static/js/runtime-main.9f4574e9.js",
+    "runtime-main.js.map": "/nfl-covid-cases/static/js/runtime-main.9f4574e9.js.map",
+    "static/js/2.a57179fa.chunk.js": "/nfl-covid-cases/static/js/2.a57179fa.chunk.js",
+    "static/js/2.a57179fa.chunk.js.map": "/nfl-covid-cases/static/js/2.a57179fa.chunk.js.map",
+    "index.html": "/nfl-covid-cases/index.html",
+    "precache-manifest.911fd3e56f8c552e32217627f6f22c13.js": "/nfl-covid-cases/precache-manifest.911fd3e56f8c552e32217627f6f22c13.js",
+    "service-worker.js": "/nfl-covid-cases/service-worker.js",
+    "static/css/main.45f1f38d.chunk.css.map": "/nfl-covid-cases/static/css/main.45f1f38d.chunk.css.map",
+    "static/js/2.a57179fa.chunk.js.LICENSE.txt": "/nfl-covid-cases/static/js/2.a57179fa.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/nfl-covid-cases/static/media/UnicaOne-Regular.4e4ddc8c.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9f4574e9.js",
+    "static/js/2.a57179fa.chunk.js",
+    "static/css/main.45f1f38d.chunk.css",
+    "static/js/main.1603cf1a.chunk.js"
+  ]
+}
